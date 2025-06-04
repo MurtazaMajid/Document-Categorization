@@ -1,2 +1,1 @@
-# Document-Categorization
-Document Categorization using NLP
+📚✨ In this project, I build an NLP-based categorization system 🤖📊 to analyze and classify text data into predefined categories. Using advanced machine learning techniques like Multimodel Naive Bayes and Logistic Regression🧠⚙️, it processes raw text, extracts key features 🔍📄, and predicts categories with good results ✅📈. Perfect for organizing content 🗂️ and uncovering insights 💡!
