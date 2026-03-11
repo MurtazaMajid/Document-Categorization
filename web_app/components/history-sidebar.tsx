@@ -1,17 +1,14 @@
 'use client';
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { HistoryItem } from '@/hooks/use-classification';
 import { Trash2 } from 'lucide-react';
-
 interface HistorySidebarProps {
   history: HistoryItem[];
   onSelectItem: (item: HistoryItem) => void;
   onClear: () => void;
 }
-
 export function HistorySidebar({
   history,
   onSelectItem,
@@ -23,7 +20,6 @@ export function HistorySidebar({
       minute: '2-digit',
     });
   };
-
   return (
     <aside className="sticky top-0 h-screen w-80 border-l-4 border-primary bg-card p-6 overflow-y-auto hidden lg:block">
       <div className="space-y-4">
@@ -43,7 +39,6 @@ export function HistorySidebar({
             </Button>
           )}
         </div>
-
         {history.length === 0 ? (
           <Card className="p-4 bg-secondary/20 border-2 border-muted">
             <p className="text-xs text-muted-foreground text-center leading-relaxed">
@@ -84,19 +79,18 @@ export function HistorySidebar({
             ))}
           </div>
         )}
-
         <div className="mt-8 pt-6 border-t-2 border-primary text-xs text-muted-foreground space-y-3">
           <p className="font-bold uppercase tracking-wide" style={{color: '#2c2c2c', fontFamily: 'Merriweather, serif'}}>
-            20 Categories
+            7 Categories
           </p>
           <div className="space-y-1 text-xs leading-relaxed">
-            <p>Atheism • Religion</p>
-            <p>Crypto • Electronics</p>
-            <p>Graphics • Motorcycles</p>
-            <p>Autos • Baseball</p>
-            <p>Hockey • Guns • Medicine</p>
-            <p>Forsale • Space</p>
-            <p>Windows • Politics</p>
+            <p>Computers</p>
+            <p>Marketplace & Business</p>
+            <p>Politics</p>
+            <p>Religion</p>
+            <p>Science</p>
+            <p>Sports</p>
+            <p>Vehicles</p>
           </div>
         </div>
       </div>
