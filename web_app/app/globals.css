@@ -1,0 +1,162 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Vintage Newspaper Style - Authentic 1900s-1920s aesthetic with aged yellows and pure black text */
+:root {
+  --background: #F3DFC1;
+  --foreground: #000000;
+  --card: #EAC599;
+  --card-foreground: #000000;
+  --popover: #F3DFC1;
+  --popover-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #F3DFC1;
+  --secondary: #E0D3AF;
+  --secondary-foreground: #000000;
+  --muted: #D4C4A8;
+  --muted-foreground: #333333;
+  --accent: #976D5D;
+  --accent-foreground: #F3DFC1;
+  --destructive: #8B4545;
+  --destructive-foreground: #F3DFC1;
+  --border: #D4C4A8;
+  --input: #EAC599;
+  --ring: #000000;
+  --chart-1: #654321;
+  --chart-2: #976D5D;
+  --chart-3: #B89968;
+  --chart-4: #8B7355;
+  --chart-5: #A0845C;
+  --radius: 0;
+  --sidebar: #F3DFC1;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000000;
+  --sidebar-primary-foreground: #F3DFC1;
+  --sidebar-accent: #976D5D;
+  --sidebar-accent-foreground: #F3DFC1;
+  --sidebar-border: #D4C4A8;
+  --sidebar-ring: #000000;
+  color-scheme: light;
+  font-family: 'Merriweather', 'Georgia', 'Times New Roman', serif;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-serif: 'Merriweather', 'Georgia', serif;
+  --font-display: 'EB Garamond', 'Georgia', serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Smooth transitions for better UX */
+  button, input, textarea, select {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Custom scrollbar styling */
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full hover:bg-primary/50;
+  }
+  
+  /* Prevent page shifts when scrollbar appears */
+  html {
+    scrollbar-gutter: stable;
+  }
+  
+  /* Newspaper-style text shadows and details */
+  .newspaper-ornament {
+    position: relative;
+  }
+  
+  .newspaper-ornament::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  }
+  
+  .newspaper-ornament::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  }
+}

@@ -1,0 +1,7 @@
+version: '1'
+services:
+  - name: classifier-api
+    runtime: python
+    entrypoint: python server.py
+    env:
+      PORT: 3001
