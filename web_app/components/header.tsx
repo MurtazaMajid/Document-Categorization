@@ -13,7 +13,7 @@ export function Header() {
           </h1>
           <div className="border-t-2 border-b-2 border-primary py-3 my-5">
             <p className="text-xs text-primary tracking-widest uppercase" style={{fontFamily: 'Merriweather, serif', fontWeight: 700, letterSpacing: '0.12em'}}>
-              Machine Learning Classification • Twenty News Categories
+              Machine Learning Classification • Twenty News Groups Dataset
             </p>
           </div>
           <p className="text-sm text-muted-foreground" style={{fontFamily: 'Merriweather, serif', fontWeight: 400}}>
