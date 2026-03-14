@@ -90,7 +90,7 @@ Before writing a single line of model code, the dataset was explored to understa
 
 **Category distribution across the 20 original classes:**
 
-![Category Count Plot](images/target_count_plot.PNG)
+![Category Count Plot](images/target%20count%20plot.PNG)
 
 The distribution plot immediately reveals something important. Categories like `rec.sport.hockey`, `soc.religion.christian`, and `rec.motorcycles` each have close to 1,000 documents. But `talk.religion.misc` and `talk.politics.misc` sit at 628 and 775 respectively -- significantly fewer than the rest. This imbalance means any model trained on these labels will naturally struggle more on the underrepresented classes, compounding the difficulty of already hard-to-separate categories.
 
