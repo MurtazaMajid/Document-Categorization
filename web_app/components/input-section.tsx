@@ -9,8 +9,40 @@ interface InputSectionProps {
   isLoading: boolean;
 }
 
+const EXAMPLES = [
+  {
+    category: "science",
+    text: "NASA announced a new mission to the Moon. The Artemis program will send astronauts back to lunar orbit for the first time in decades, paving the way for sustainable exploration of the Moon and eventual missions to Mars.",
+  },
+  {
+    category: "sports",
+    text: "The Boston Red Sox defeated the New York Yankees 7-3 in a thrilling game last night. The pitcher threw a complete game with 11 strikeouts, and the cleanup hitter launched two home runs to seal the victory.",
+  },
+  {
+    category: "computers",
+    text: "I recently upgraded my system from Windows 10 to Windows 11 and have been experiencing frequent crashes. The GPU driver seems to be the culprit as the blue screen error points to a graphics memory issue. Has anyone else encountered this after the update?",
+  },
+  {
+    category: "politics",
+    text: "The Senate voted 52 to 48 to pass the new infrastructure bill, allocating over $1 trillion toward road construction, broadband expansion, and clean energy initiatives. The bill now moves to the House where it faces an uncertain path forward.",
+  },
+  {
+    category: "religion",
+    text: "The congregation gathered for Sunday morning service as the pastor delivered a sermon on forgiveness and redemption. He drew from the Gospel of Matthew, emphasising the importance of compassion and moral responsibility in everyday life.",
+  },
+  {
+    category: "vehicles",
+    text: "I just finished rebuilding the carburetor on my 1987 Honda motorcycle and the engine is running much smoother now. The main jet was clogged with old fuel residue which was causing the rough idle at low RPM.",
+  },
+  {
+    category: "marketplace and business",
+    text: "For sale: Dell XPS 15 laptop, 2022 model, Intel Core i7, 16GB RAM, 512GB SSD. Minor scratches on the lid but screen and keyboard are in perfect condition. Asking $750 OBO, includes original charger and box.",
+  },
+];
+
 export function InputSection({ onSubmit, isLoading }: InputSectionProps) {
   const [text, setText] = useState('');
+  const [lastExampleIndex, setLastExampleIndex] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,9 +52,13 @@ export function InputSection({ onSubmit, isLoading }: InputSectionProps) {
   };
 
   const handleExample = () => {
-    setText(
-      "NASA announced a new mission to the Moon. The Artemis program will send astronauts back to lunar orbit for the first time in decades, paving the way for sustainable exploration of the Moon and eventual missions to Mars."
-    );
+    let randomIndex: number;
+    do {
+      randomIndex = Math.floor(Math.random() * EXAMPLES.length);
+    } while (randomIndex === lastExampleIndex && EXAMPLES.length > 1);
+
+    setLastExampleIndex(randomIndex);
+    setText(EXAMPLES[randomIndex].text);
   };
 
   return (
