@@ -33,7 +33,7 @@ export function InputSection({ onSubmit, isLoading }: InputSectionProps) {
             SUBMIT A DOCUMENT FOR CLASSIFICATION
           </h2>
           <p className="text-base text-foreground mb-8 leading-relaxed" style={{fontFamily: 'Merriweather, serif'}}>
-            Paste any news article, document, or text passage below. Our fine-tuned BERT transformer will automatically categorize it into one of 20 news categories with confidence scoring.
+            Paste any news article, document, or text passage below. Our fine-tuned BERT transformer will automatically categorize it into one of 7 news categories with confidence scoring.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
