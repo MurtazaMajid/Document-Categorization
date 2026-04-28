@@ -20,7 +20,7 @@
 </div>
 
 ---
-![Document Classification](Images/app_screenshot.png)
+![Document Classification](images/app_screenshot.png)
 
 <br/>
 
