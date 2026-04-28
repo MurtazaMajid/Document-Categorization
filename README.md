@@ -19,6 +19,9 @@
 
 </div>
 
+---
+![Document Classification](Images/app_screenshot.png)
+
 <br/>
 
 ---
